@@ -11,6 +11,9 @@ BuildArch: noarch
 Url: http://github.com/sosreport/sos
 BuildRequires: python-devel
 BuildRequires: gettext
+BuildRequires: make
+BuildRequires: python-sphinx
+BuildRequires: python-six
 Requires: libxml2-python
 Requires: python-six
 Requires: bzip2
