@@ -1,6 +1,6 @@
 Summary: A set of tools to gather troubleshooting information from a system
 Name: sos
-Version: 4.6.0
+Version: 4.6.1
 Release: 1%{?dist}
 Source: https://github.com/sosreport/%{name}/archive/refs/tags/%{version}.tar.gz
 License: GPL-2.0-or-later
@@ -22,6 +22,8 @@ Recommends: python3-pyyaml
 Obsoletes: sos-collector <= 1.9
 # For the _tmpfilesdir macro.
 BuildRequires: systemd
+# Mandatory just for uploading to an S3 bucket:
+Recommends: python3-boto3
 
 %description
 Sos is a set of tools that gathers information about system
@@ -90,6 +92,9 @@ rm -rf %{buildroot}/usr/config/
 %config(noreplace) %{_sysconfdir}/sos/sos.conf
 
 %changelog
+* Wed Jan 10 2024 Pavel Moravec <pmoravec@redhat.com> = 4.6.1
+- New upstream release
+
 * Thu Aug 17 2023 Jake Hunsaker <jacob.r.hunsaker@gmail.com> = 4.6.0
 - New upstream release
 
