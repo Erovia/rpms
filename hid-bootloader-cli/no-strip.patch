@@ -1,0 +1,11 @@
+--- Bootloaders/HID/HostLoaderApp/Makefile	2024-03-02 13:03:08.495781714 +0000
++++ Bootloaders/HID/HostLoaderApp/Makefile.new	2024-03-02 13:02:59.641893592 +0000
+@@ -7,7 +7,7 @@
+ CC ?= gcc
+ CFLAGS ?= -O2 -Wall
+ hid_bootloader_cli: hid_bootloader_cli.c
+-	$(CC) $(CFLAGS) -s -DUSE_LIBUSB -o hid_bootloader_cli hid_bootloader_cli.c -lusb
++	$(CC) $(CFLAGS) -DUSE_LIBUSB -o hid_bootloader_cli hid_bootloader_cli.c -lusb
+ 
+ 
+ else ifeq ($(OS), WINDOWS)
