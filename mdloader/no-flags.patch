@@ -1,0 +1,11 @@
+--- BUILD/mdloader-1.0.7/Makefile	2022-07-15 05:45:25.000000000 +0100
++++ BUILD/mdloader-1.0.7/Makefile.new	2024-03-02 13:56:38.810196755 +0000
+@@ -1,7 +1,7 @@
+ OUTNAME = mdloader
+ OBJDIR = build
+ CC = gcc
+-CFLAGS = -Wall -std=gnu99
++CFLAGS ?= -Wall -std=gnu99
+ 
+ SRCFILES = mdloader_common.c mdloader_parser.c
+ ifeq ($(OS),Windows_NT)
