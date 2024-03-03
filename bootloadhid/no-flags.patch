@@ -1,0 +1,11 @@
+--- commandline/Makefile	2012-12-08 16:40:32.000000000 +0000
++++ commandline/Makefile.new	2024-03-03 09:51:26.584024733 +0000
+@@ -22,7 +22,7 @@
+ 
+ CC=				gcc
+ CXX=			g++
+-CFLAGS=			-O2 -Wall $(USBFLAGS)
++CFLAGS?=			-O2 -Wall $(USBFLAGS)
+ LIBS=			$(USBLIBS)
+ ARCH_COMPILE=	
+ ARCH_LINK=		
