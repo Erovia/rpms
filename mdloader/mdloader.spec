@@ -1,6 +1,6 @@
 Name:           mdloader
 Version:        1.0.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Massdrop Firmware Loader
 Packager:       Erovia <https://github.com/Erovia>
 
@@ -21,6 +21,11 @@ Massdrop Firmware Loader - for CTRL / ALT / SHIFT / Rocketeer keyboards
 %autosetup
 
 %build
+%if 0%{?rhel}
+    # This macro sets the default flags.
+    # It should run automatically, but on RHEL it does not ¯\_(ツ)_/¯
+    %set_build_flags
+%endif
 %make_build
 
 %install
@@ -33,6 +38,9 @@ cp build/mdloader %{buildroot}/usr/bin/mdloader
 %{_bindir}/mdloader
 
 %changelog
+* Sat Mar 16 2024 Erovia <erovia@users.noreply.github.com> - 1.0.7-2
+- Fix build on RHEL
+
 * Sat Mar 2 2024 Erovia <erovia@users.noreply.github.com> - 1.0.7-1
 - Package release 1.0.7
 
