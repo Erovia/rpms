@@ -22,9 +22,14 @@ USB boot loader for AVR microcontrollers.
 
 %prep
 %setup -q -n %{sourcetar}
-%patch 0
+%patch -P0
 
 %build
+%if 0%{?rhel}
+    # This macro sets the default flags.
+    # It should run automatically, but on RHEL it does not ¯\_(ツ)_/¯
+    %set_build_flags
+%endif
 cd commandline
 %make_build
 
