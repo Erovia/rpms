@@ -1,9 +1,9 @@
 Summary: A set of tools to gather troubleshooting information from a system
 Name: sos
-Version: 4.7.2
+Version: 4.8.0
 Release: 1%{?dist}
 Source: https://github.com/sosreport/%{name}/archive/refs/tags/%{version}.tar.gz
-License: GPL-2.0-or-later
+License: GPL-2.0
 BuildArch: noarch
 Url: https://github.com/sosreport/sos
 BuildRequires: python3-devel
